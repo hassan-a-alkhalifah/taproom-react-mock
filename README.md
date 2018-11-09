@@ -18,7 +18,8 @@ My components structure can be viewed below:
 
 ## My Notes
 
-* Had trouble setting up and working with style-jsx. Seems to have been a version error. Also, it seems you cannot target a tag provide by the Link tags. Using CSS incline styles seems to be the only get around
+* Had trouble setting up and working with style-jsx. Seems to have been a version error. Also, it seems you cannot target a tag provide by the Link tags. Using CSS incline styles seems to be the only get around.
+* Tried injecting base64 converted imaged into json, but won't work. For the time being, I used image url paths for the image src value. I kept the saved images, as we should be learning more about how to work with base64 converted images soon and using firebase as a way to store and retrieve them.
 
 ## User Stories
 

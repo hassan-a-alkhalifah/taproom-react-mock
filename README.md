@@ -18,6 +18,8 @@ My components structure can be viewed below:
 
 ## My Notes
 
+* Had trouble setting up and working with style-jsx. Seems to have been a version error. Also, it seems you cannot target a tag provide by the Link tags. Using CSS incline styles seems to be the only get around
+
 ## User Stories
 
 * As a patron, I want to see a list/menu of all available kegs. For each keg, I need to see its name, brand, price and alcoholContent.

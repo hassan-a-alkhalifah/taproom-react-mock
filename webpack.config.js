@@ -42,6 +42,21 @@ module.exports = {
           }
         },
         {
+          test: /\.jsx?$/,
+          loader: "babel-loader",
+          exclude: /node_modules/,
+          options: {
+            presets: [
+              ["es2015", {"modules": false}],
+              "react",
+            ],
+            plugins: [
+              "react-hot-loader/babel",
+              "styled-jsx/babel"
+            ]
+          }
+        },
+        {
         test: /\.(png|gif|jp(e*)g|svg)$/,
         use: {
           loader: 'url-loader',
@@ -51,20 +66,6 @@ module.exports = {
           }
         }
       },
-      {
-        test: /\.jsx?$/,
-        loader: "babel-loader",
-        exclude: /node_modules/,
-        options: {
-          presets: [
-            ["es2015", {"modules": false}],
-            "react",
-          ],
-          plugins: [
-            "react-hot-loader/babel"
-          ]
-        }
-      }
     ]
   },
 

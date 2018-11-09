@@ -24,7 +24,7 @@ The website is broken down into multiple components which have their data types 
 
 ## Website Sketch
 
-![Website Sketch]()
+![Website Sketch](./src/assets/images/website-sketch.jpg)
 
 ## Setup Instructions
 

@@ -12,6 +12,12 @@ Listed kegs with 10 pints or less will be marked so the employee can be alerted 
 
 The website is broken down into multiple components which have their data types and shapes defined by propTypes. Client-side routing will be used to create the appearance of multiple pages as the user navigated to a different "page". CSS object and JSX style tags are used to provide styles to individual components.
 
+My components structure can be viewed below:
+
+![Website Sketch](./src/assets/images/component-structure-sketch.jpg)
+
+## My Notes
+
 ## User Stories
 
 * As a patron, I want to see a list/menu of all available kegs. For each keg, I need to see its name, brand, price and alcoholContent.

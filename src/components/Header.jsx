@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return(
     <div>
-    <p>HOME</p>
+    <Link to="/"><p>HOME</p></Link>
     <img alt="main logo"/>
-    <p>ADMIN</p>
+    <Link to="/admin"><p>ADMIN</p></Link>
     </div>
   );
 }

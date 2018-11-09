@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import KegEditButton from './KegEditButton';
 
 function Keg(props) {
 
@@ -37,6 +38,7 @@ function Keg(props) {
         <p><span className='beer-brand'>{props.beerBrand}</span> <span className='beer-abv'>{props.beerABV}</span></p>
         <p className='pint-level'>Pint Level: {props.pintLevel}</p>
       </div>
+      <KegEditButton/>
     </div>
   );
 }

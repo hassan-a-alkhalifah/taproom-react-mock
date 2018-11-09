@@ -4,8 +4,6 @@ import Keg from './Keg';
 
 function KegsList() {
 
-  console.log({beerTaps});
-
   const masterKegsList = [
     {
       beerBrandImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSOmjZOYytvTyrTzuc0f2QrGj-rixSqXarTlpZsRVPGaMu-aur',
@@ -52,23 +50,30 @@ function KegsList() {
   const mainImageStyle = {
     width: '100%'
   };
+  const masterKegListStyles = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  }
 
   return(
     <div>
       <img src={beerTaps} style={mainImageStyle}/>
-      {masterKegsList.map((keg, index) => {
-        return(
-          <Keg
-            key={index}
-            beerBrandImage={keg.beerBrandImage}
-            beerName={keg.beerName}
-            beerPrice={keg.beerPrice}
-            beerABV={keg.beerABV}
-            beerBrand={keg.beerBrand}
-            pintLevel={keg.pintLevel}
-          />
-        );
-      })}
+      <div style={masterKegListStyles}>
+        {masterKegsList.map((keg, index) => {
+          return(
+            <Keg
+              key={index}
+              beerBrandImage={keg.beerBrandImage}
+              beerName={keg.beerName}
+              beerPrice={keg.beerPrice}
+              beerABV={keg.beerABV}
+              beerBrand={keg.beerBrand}
+              pintLevel={keg.pintLevel}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

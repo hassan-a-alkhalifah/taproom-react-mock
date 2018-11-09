@@ -8,17 +8,17 @@ function Header() {
     display: 'flex',
     justifyContent: 'center',
     borderBottom: '2px solid #555'
-  }
+  };
   const headerSubSectionStyles = {
     width: '300px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center'
-  }
+  };
   const linkStyle = {
     textDecoration: 'none',
     color: '#000'
-  }
+  };
 
   return(
     <div style={headerStyles}>

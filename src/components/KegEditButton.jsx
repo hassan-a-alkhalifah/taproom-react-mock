@@ -1,8 +1,15 @@
 import React from 'react';
 
 function KegEditButton() {
+
+  const kegEditButtonStyles = {
+    padding: '10px',
+    borderRadius: '4px',
+    border: 'none'
+  }
+
   return(
-    <button>Edit</button>
+    <button style={kegEditButtonStyles}>Edit</button>
   );
 }
 

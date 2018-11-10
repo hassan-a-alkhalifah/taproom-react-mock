@@ -5,7 +5,7 @@ import KegEditButton from './KegEditButton';
 function Keg(props) {
 
   const kegStyles = {
-    width: '413px',
+    width: '476px',
     display: 'flex',
     alignItems: 'center',
     marginBottom: '20px'
@@ -16,7 +16,8 @@ function Keg(props) {
     marginRight: '20px'
   }
   const beerSpecsStyles = {
-    height: '100px'
+    height: '100px',
+    marginRight: '20px'
   }
 
   return(

@@ -47,8 +47,33 @@ function KegsList() {
     },
   ];
 
+  const heroStyles = {
+    position: 'relative',
+    margin: '60px 0 60px 0',
+    width: '100%',
+    height: 'calc(100vh - 60px)',
+    overflow: 'hidden'
+  }
+  const heroSubContainerStyles = {
+    width: '100%',
+    height: 'calc(100%)',
+    position: 'absolute',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: '1'
+  }
+  const heroTitleContainerStyles = {
+    width: '100%',
+    height: '110px',
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  }
   const mainImageStyle = {
-    width: '100%'
+    width: "150%"
   };
   const masterKegListStyles = {
     display: 'flex',
@@ -58,7 +83,71 @@ function KegsList() {
 
   return(
     <div>
-      <img src={beerTaps} style={mainImageStyle}/>
+      <style jsx>{`
+          h1 {
+            text-shadow: 0 0 15px #000;
+            animation: appear 1s forwards;
+          }
+          #horizonal-rule {
+            height: 2px;
+            background-color: #fff8f6;
+            box-shadow: 0px 0px 23px 1px rgba(0,0,0,0.75);
+            animation: stretch 0.5s linear 1s forwards;
+          }
+          h3 {
+            color: transparent;
+            position: absolute;
+            font-size: 35px;
+            top: 49px;
+            animation: drop 0.1s linear 1.7s forwards, show 0.1s linear 1.7s forwards;
+          }
+          @keyframes appear {
+            0% {
+              color: transparent;
+              font-size: 0;
+            }
+            100% {
+              color: #fff8f6;
+              font-size: 60px;
+            }
+          }
+          @keyframes stretch {
+            0% {
+              width: 0;
+            }
+            100% {
+              width: 737px;
+            }
+          }
+          @keyframes drop {
+            0% {
+              top: 49px;
+            }
+            100% {
+              top: 80px;
+            }
+          }
+          @keyframes show {
+            0% {
+              color: transparent;
+              text-shadow: none;
+            }
+            100% {
+              color: #fff8f6;
+              text-shadow: 0 0 15px #000;
+            }
+          }
+      `}</style>
+      <div style={heroStyles}>
+        <div style={heroSubContainerStyles}>
+          <div style={heroTitleContainerStyles}>
+            <h1>WE'RE JUST A TAP AWAY</h1>
+            <div id="horizonal-rule"></div>
+            <h3>A Tap For All Walks Of Life</h3>
+          </div>
+        </div>
+        <img src={beerTaps} style={mainImageStyle}/>
+      </div>
       <div style={masterKegListStyles}>
         {masterKegsList.map((keg, index) => {
           return(

@@ -4,9 +4,14 @@ import { Link } from 'react-router-dom';
 function Header() {
 
   const headerStyles = {
+    width: '100%',
     height: '60px',
     display: 'flex',
     justifyContent: 'center',
+    position: 'fixed',
+    top: '0',
+    zIndex: '2',
+    backgroundColor: "#FFF",
     borderBottom: '2px solid #555'
   };
   const headerSubSectionStyles = {

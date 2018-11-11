@@ -10,7 +10,7 @@ function Admin() {
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: '60px',
-    background: 'linear-gradient(to right, #a28981 0%, #a86e5d 26%, #a2614e 44%, #9d4d34 71%, #762f19 100%)'
+    background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)'
   }
   const formStyles = {
     display: 'flex',

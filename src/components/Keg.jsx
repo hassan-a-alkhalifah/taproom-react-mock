@@ -5,10 +5,10 @@ import KegEditButton from './KegEditButton';
 function Keg(props) {
 
   const kegStyles = {
-    width: '476px',
+    width: '493px',
     display: 'flex',
     alignItems: 'center',
-    marginBottom: '20px'
+    marginBottom: '60px'
   }
   const beerBrandImageStyles = {
     width: '100px',

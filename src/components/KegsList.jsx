@@ -49,7 +49,7 @@ function KegsList() {
 
   const heroStyles = {
     position: 'relative',
-    margin: '60px 0 60px 0',
+    margin: '60px 0 0 0',
     width: '100%',
     height: 'calc(100vh - 60px)',
     overflow: 'hidden'
@@ -78,7 +78,9 @@ function KegsList() {
   const masterKegListStyles = {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingTop: '60px',
+    background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)'
   }
 
   return(

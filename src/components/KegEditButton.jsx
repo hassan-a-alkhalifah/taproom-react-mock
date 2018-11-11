@@ -5,7 +5,8 @@ function KegEditButton() {
   const kegEditButtonStyles = {
     padding: '10px',
     borderRadius: '4px',
-    border: 'none'
+    border: 'none',
+    cursor: 'pointer'
   }
 
   return(

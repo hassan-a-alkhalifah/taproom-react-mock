@@ -11,8 +11,8 @@ function Header() {
     position: 'fixed',
     top: '0',
     zIndex: '2',
-    backgroundColor: "#FFF",
-    borderBottom: '2px solid #555'
+    background: 'linear-gradient(to right, rgba(255,255,255,0.9) 0%, rgba(246,246,246,0.9) 47%, rgba(237,237,237,0.9) 100%)',
+    boxShadow: '0px 10px 25px -3px rgba(0,0,0,0.75)'
   };
   const headerSubSectionStyles = {
     width: '300px',

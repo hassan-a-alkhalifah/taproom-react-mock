@@ -49,9 +49,9 @@ function KegsList() {
 
   const heroStyles = {
     position: 'relative',
-    margin: '60px 0 0 0',
+    margin: '112px 0 0 0',
     width: '100%',
-    height: 'calc(100vh - 60px)',
+    height: 'calc(100vh - 112px)',
     overflow: 'hidden'
   }
   const heroSubContainerStyles = {
@@ -66,7 +66,7 @@ function KegsList() {
   }
   const heroTitleContainerStyles = {
     width: '100%',
-    height: '110px',
+    height: '112px',
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
@@ -79,7 +79,7 @@ function KegsList() {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    paddingTop: '60px',
+    paddingTop: '112px',
     background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)'
   }
 

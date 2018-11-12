@@ -22,7 +22,7 @@ function Admin() {
     padding: '10px',
     borderRadius: '4px',
     border: 'none',
-    marginLeft: '133px'
+    marginLeft: '137px'
   }
 
   const fileSelectedHandler = event => {
@@ -40,19 +40,19 @@ function Admin() {
             margin-right: 10px;
           }
           form div:nth-child(2) label{
-            margin-right: 55px;
+            margin-right: 58px;
           }
           form div:nth-child(3) label{
-            margin-right: 61px;
+            margin-right: 64px;
           }
           form div:nth-child(4) label{
-            margin-right: 94px;
+            margin-right: 106px;
           }
           form div:nth-child(5) label{
-            margin-right: 54px;
+            margin-right: 59px;
           }
           form div:nth-child(6) label{
-            margin-right: 61px;
+            margin-right: 68px;
           }
       `}</style>
       <h1>Add New Beer</h1>

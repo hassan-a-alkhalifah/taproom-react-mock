@@ -48,7 +48,7 @@ function Footer() {
       </div>
       <hr/>
       <div style={footerBottomStyles}>
-        <p>Developed and Designed by: <a style={developerAndDesignerLinkStyles} href='#'>Hassan Al-khalifah</a></p>
+        <p>Developed and Designed by: <a style={developerAndDesignerLinkStyles} href='https://github.com/hassan-a-alkhalifah' target='_blank'>Hassan Al-khalifah</a></p>
       </div>
     </div>
   );

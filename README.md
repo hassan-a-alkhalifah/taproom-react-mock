@@ -16,6 +16,21 @@ My components structure can be viewed below:
 
 ![Website Sketch](./src/assets/images/component-structure-sketch.jpg)
 
+## Website Screenshots
+
+### Landing Page Top
+![landing page top](./src/assets/images/landing-page-top.png)
+___
+### Landing Page Middle
+![landing page middle](./src/assets/images/landing-page-middle.png)
+___
+### Landing Page Bottom
+![landing page bottom](./src/assets/images/landing-page-bottom.png)
+___
+### Admin Page
+![admin page](./src/assets/images/admin-page.png)
+
+
 ## My Notes
 
 * Had trouble setting up and working with style-jsx. Seems to have been a version error. Also, it seems you cannot target a tag provide by the Link tags. Using CSS incline styles seems to be the only get around.

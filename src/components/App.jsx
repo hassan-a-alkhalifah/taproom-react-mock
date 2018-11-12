@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './Header';
 import KegsList from './KegsList';
 import Admin from './Admin';
+import Footer from './Footer';
 
 function App(){
   return (
@@ -12,6 +13,7 @@ function App(){
         <Route exact path='/' component={KegsList} />
         <Route exact path='/admin' component={Admin} />
       </Switch>
+      <Footer/>
     </div>
   );
 }

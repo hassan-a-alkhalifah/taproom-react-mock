@@ -4,12 +4,12 @@ function Admin() {
 
   const adminStyles = {
     width: '100%',
-    height: 'calc(100vh - 60px)',
+    height: 'calc(100vh - 112px)',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '60px',
+    marginTop: '112px',
     background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)'
   }
   const formStyles = {

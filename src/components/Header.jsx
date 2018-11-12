@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import mainLogo from '../assets/images/main-logo.png';
 
 function Header() {
 
   const headerStyles = {
     width: '100%',
-    height: '60px',
+    height: '114px',
     display: 'flex',
     justifyContent: 'center',
     position: 'fixed',
@@ -15,7 +16,7 @@ function Header() {
     boxShadow: '0px 10px 25px -3px rgba(0,0,0,0.75)'
   };
   const headerSubSectionStyles = {
-    width: '300px',
+    width: '380px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center'
@@ -25,12 +26,15 @@ function Header() {
     color: '#000',
     fontSize: '25px'
   };
+  const mainLogoStyle = {
+    width: '130px'
+  }
 
   return(
     <div style={headerStyles}>
       <div style={headerSubSectionStyles}>
         <p><Link to="/" style={linkStyle}>HOME</Link></p>
-        <img alt="main logo"/>
+        <img style={mainLogoStyle} src={mainLogo} alt="main logo"/>
         <p><Link to="/admin" style={linkStyle}>ADMIN</Link></p>
       </div>
     </div>

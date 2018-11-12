@@ -14,7 +14,7 @@ function KegsList() {
       pintLevel: 100
     },
     {
-      beerBrandImage: 'https://vectors.pro/wp-content/uploads/2017/10/guinness-draught-logo-vector.png',
+      beerBrandImage: 'https://lh3.googleusercontent.com/LVVcmpcHEmolmm94L_kyJIyzviGD68WDWU0kdQqiGZkXA1GN8MSYJvojoTYIcVgCsbNqwTkqAYcqDXuqC8aAQuxx4SD0Ag=s750',
       beerName: 'Draught',
       beerPrice: '$4.00',
       beerABV: '5.0%',

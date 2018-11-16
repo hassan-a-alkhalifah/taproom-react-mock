@@ -1,13 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function TapEditPopUpModal() {
+function TapEditPopUpModal(props) {
 
-  let _beerBrandImage = null;
-  let _beerName = null;
-  let _beerPrice = null;
-  let _beerABV = null;
-  let _beerBrand = null;
-  let _pintLevel = null;
+  let beerBrandImageInput = null;
+  let beerNameInput = null;
+  let beerPriceInput = null;
+  let beerABVInput = null;
+  let beerBrandInput = null;
+  let pintLevelInput = null;
+
+  if(props.selectedEditTap != null) {
+    beerBrandImageInput = props.beerBrandImageInput;
+    beerNameInput = props.beerNameInput;
+    beerPriceInput = props.beerPriceInput;
+    beerABVInput = props.beerABVInput;
+    beerBrandInput = props.beerBrandInput;
+    pintLevelInput = props.pintLevelInput;
+  }
 
   const tapEditPopUpModalStyles = {
     width: '400px',
@@ -68,7 +78,10 @@ function TapEditPopUpModal() {
           <input
              type='text'
              id='beer-brand-image'
-             ref={(input) => {_beerBrandImage = input;}}
+             name='beerBrandImageInput'
+             onChange={(event) => {props.onInputChange(event)}}
+             value={props.beerBrandImageInput}
+             ref={(input) => {beerBrandImageInput = input;}}
           />
         </div>
         <div>
@@ -76,7 +89,10 @@ function TapEditPopUpModal() {
           <input
             type='text'
             id='beer-name'
-            ref={(input) => {_beerName = input;}}
+            name='beerNameInput'
+            onChange={(event) => {props.onInputChange(event)}}
+            value={props.beerNameInput}
+            ref={(input) => {beerNameInput = input;}}
           />
         </div>
         <div>
@@ -84,7 +100,10 @@ function TapEditPopUpModal() {
           <input
             type='text'
             id='beer-price'
-            ref={(input) => {_beerPrice = input;}}
+            name='beerPriceInput'
+            onChange={(event) => {props.onInputChange(event)}}
+            value={props.beerPriceInput}
+            ref={(input) => {beerPriceInput = input;}}
           />
         </div>
         <div>
@@ -92,7 +111,10 @@ function TapEditPopUpModal() {
           <input
             type='text'
             id='beer-ABV'
-            ref={(input) => {_beerABV = input;}}
+            name='beerABVInput'
+            onChange={(event) => {props.onInputChange(event)}}
+            value={props.beerABVInput}
+            ref={(input) => {beerABVInput = input;}}
           />
         </div>
         <div>
@@ -100,7 +122,10 @@ function TapEditPopUpModal() {
           <input
             type='text'
             id='beer-brand'
-            ref={(input) => {_beerBrand = input;}}
+            name='beerBrandInput'
+            onChange={(event) => {props.onInputChange(event)}}
+            value={props.beerBrandInput}
+            ref={(input) => {beerBrandInput = input;}}
           />
         </div>
         <div>
@@ -108,15 +133,30 @@ function TapEditPopUpModal() {
           <input
             type='number'
             id='pint-level'
+            name='pintLevelInput'
+            onChange={props.onInputChange}
             min='0'
             max='100'
-            ref={(input) => {_pintLevel = input;}}
+            value={props.pintLevelInput}
+            ref={(input) => {pintLevelInput = input;}}
           />
         </div>
         <button style={updateButtonStyles} type='submit'>Update</button>
       </form>
     </div>
   );
+}
+
+TapEditPopUpModal.propType = {
+  selectedEditTap: PropTypes.string,
+  masterTapList: PropTypes.object,
+  onInputChange: PropTypes.func,
+  beerBrandImageInput: PropTypes.string,
+  beerNameInput: PropTypes.string,
+  beerPriceInput: PropTypes.string,
+  beerABVInput: PropTypes.string,
+  beerBrandInput: PropTypes.string,
+  pintLevelInput: PropTypes.string
 }
 
 export default TapEditPopUpModal;

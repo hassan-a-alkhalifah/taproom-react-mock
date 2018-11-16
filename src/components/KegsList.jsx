@@ -111,7 +111,17 @@ function KegsList(props) {
         <img src={beerTaps} style={mainImageStyle}/>
       </div>
       <div style={masterKegListStyles}>
-        <TapEditPopUpModal/>
+        <TapEditPopUpModal
+          selectedEditTap={props.selectedEditTap}
+          masterTapList={props.masterTapList}
+          onInputChange={props.onInputChange}
+          beerBrandImageInput={props.beerBrandImageInput}
+          beerNameInput={props.beerNameInput}
+          beerPriceInput={props.beerPriceInput}
+          beerABVInput={props.beerABVInput}
+          beerBrandInput={props.beerBrandInput}
+          pintLevelInput={props.pintLevelInput}
+        />
         {Object.keys(props.masterTapList).map((tapId) => {
           let tap = props.masterTapList[tapId];
           return(
@@ -136,7 +146,15 @@ function KegsList(props) {
 KegsList.propTypes = {
   masterTapList: PropTypes.object,
   onTapEditSelection: PropTypes.func,
-  tapId: PropTypes.string
+  tapId: PropTypes.string,
+  selectedEditTap: PropTypes.string,
+  onInputChange: PropTypes.func,
+  beerBrandImageInput: PropTypes.string,
+  beerNameInput: PropTypes.string,
+  beerPriceInput: PropTypes.string,
+  beerABVInput: PropTypes.string,
+  beerBrandInput: PropTypes.string,
+  pintLevelInput: PropTypes.string
 }
 
 export default KegsList;

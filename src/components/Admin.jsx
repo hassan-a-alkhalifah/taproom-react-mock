@@ -73,7 +73,7 @@ function Admin(props) {
         <div>
           <label for='beer-brand-image'>Beer Brand Image</label>
           <input
-             type='file'
+             type='text'
              id='beer-brand-image'
              ref={(input) => {_beerBrandImage = input;}}
           />

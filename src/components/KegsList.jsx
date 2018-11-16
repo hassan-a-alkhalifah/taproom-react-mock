@@ -1,6 +1,7 @@
 import React from 'react';
 import beerTaps from '../assets/images/beer-taps.jpg';
 import Keg from './Keg';
+import TapEditPopUpModal from './TapEditPopUpModal';
 import PropTypes from 'prop-types';
 
 function KegsList(props) {
@@ -34,6 +35,7 @@ function KegsList(props) {
     width: '150%'
   };
   const masterKegListStyles = {
+    position: 'relative',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -109,6 +111,7 @@ function KegsList(props) {
         <img src={beerTaps} style={mainImageStyle}/>
       </div>
       <div style={masterKegListStyles}>
+        <TapEditPopUpModal/>
         {Object.keys(props.masterTapList).map((tapId) => {
           let tap = props.masterTapList[tapId];
           return(

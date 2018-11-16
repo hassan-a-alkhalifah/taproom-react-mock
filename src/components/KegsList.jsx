@@ -1,56 +1,9 @@
 import React from 'react';
 import beerTaps from '../assets/images/beer-taps.jpg';
-import shinerBockLogo from '../assets/images/shiner-bock-logo.jpg';
-import guinnessDraughtLogo from '../assets/images/guinness-draught-logo.jpg';
-import blueMoonLogo from '../assets/images/blue-moon-logo.jpg';
-import budweiserLogo from '../assets/images/budweiser-logo.jpg';
-import heinekenLogo from '../assets/images/heineken-logo.jpg';
 import Keg from './Keg';
+import PropTypes from 'prop-types';
 
-function KegsList() {
-
-  const masterKegsList = [
-    {
-      beerBrandImage: `${shinerBockLogo}`,
-      beerName: 'Bock',
-      beerPrice: '$3.50',
-      beerABV: '4.4%',
-      beerBrand: 'Shiner',
-      pintLevel: 100
-    },
-    {
-      beerBrandImage: `${guinnessDraughtLogo}`,
-      beerName: 'Draught',
-      beerPrice: '$4.00',
-      beerABV: '5.0%',
-      beerBrand: 'Guinness',
-      pintLevel: 100
-    },
-    {
-      beerBrandImage: `${blueMoonLogo}`,
-      beerName: 'Belgian White',
-      beerPrice: '$5.00',
-      beerABV: '5.4%',
-      beerBrand: 'Blue Moon',
-      pintLevel: 100
-    },
-    {
-      beerBrandImage: `${budweiserLogo}`,
-      beerName: 'Budweiser',
-      beerPrice: '$3.25',
-      beerABV: 'Budweiser',
-      beerBrand: '5.0%',
-      pintLevel: 100
-    },
-    {
-      beerBrandImage: `${heinekenLogo}`,
-      beerName: 'Lager',
-      beerPrice: '$3.25',
-      beerABV: '5.0%',
-      beerBrand: 'Heineken',
-      pintLevel: 100
-    },
-  ];
+function KegsList(props) {
 
   const heroStyles = {
     position: 'relative',
@@ -58,7 +11,7 @@ function KegsList() {
     width: '100%',
     height: 'calc(100vh - 112px)',
     overflow: 'hidden'
-  }
+  };
   const heroSubContainerStyles = {
     width: '100%',
     height: 'calc(100%)',
@@ -68,7 +21,7 @@ function KegsList() {
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: '1'
-  }
+  };
   const heroTitleContainerStyles = {
     width: '100%',
     height: '112px',
@@ -76,9 +29,9 @@ function KegsList() {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center'
-  }
+  };
   const mainImageStyle = {
-    width: "150%"
+    width: '150%'
   };
   const masterKegListStyles = {
     display: 'flex',
@@ -86,7 +39,7 @@ function KegsList() {
     alignItems: 'center',
     paddingTop: '112px',
     background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)'
-  }
+  };
 
   return(
     <div>
@@ -156,22 +109,27 @@ function KegsList() {
         <img src={beerTaps} style={mainImageStyle}/>
       </div>
       <div style={masterKegListStyles}>
-        {masterKegsList.map((keg, index) => {
+        {Object.keys(props.masterTapList).map((tapId) => {
+          let tap = props.masterTapList[tapId];
           return(
             <Keg
-              key={index}
-              beerBrandImage={keg.beerBrandImage}
-              beerName={keg.beerName}
-              beerPrice={keg.beerPrice}
-              beerABV={keg.beerABV}
-              beerBrand={keg.beerBrand}
-              pintLevel={keg.pintLevel}
+              key={tapId}
+              beerBrandImage={tap.beerBrandImage}
+              beerName={tap.beerName}
+              beerPrice={tap.beerPrice}
+              beerABV={tap.beerABV}
+              beerBrand={tap.beerBrand}
+              pintLevel={tap.pintLevel}
             />
           );
         })}
       </div>
     </div>
   );
+}
+
+KegsList.propTypes = {
+  masterTapList: PropTypes.object
 }
 
 export default KegsList;

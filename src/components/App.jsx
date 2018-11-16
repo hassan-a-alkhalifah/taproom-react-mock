@@ -14,6 +14,7 @@ class App extends React.Component {
       masterTapList: {}
     };
     this.handleAddingNewTapToList = this.handleAddingNewTapToList.bind(this);
+    this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this);
   }
 
   handleAddingNewTapToList(newTap) {
@@ -22,6 +23,10 @@ class App extends React.Component {
       [newTapId]: newTap
     });
     this.setState({ masterTapList: newMasterTapList });
+  }
+
+  handleChangingSelectedTicket(tapId) {
+    console.log(tapId);
   }
 
   render() {
@@ -34,6 +39,7 @@ class App extends React.Component {
             render={ () =>
               <KegsList
                 masterTapList={this.state.masterTapList}
+                onTapEditSelection={this.handleChangingSelectedTicket}
               />
             }
           />

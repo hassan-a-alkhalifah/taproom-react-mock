@@ -123,6 +123,8 @@ function KegsList(props) {
               beerABV={tap.beerABV}
               beerBrand={tap.beerBrand}
               pintLevel={tap.pintLevel}
+              onTapEditSelection={props.onTapEditSelection}
+              tapId={tapId}
             />
           );
         })}
@@ -132,7 +134,9 @@ function KegsList(props) {
 }
 
 KegsList.propTypes = {
-  masterTapList: PropTypes.object
+  masterTapList: PropTypes.object,
+  onTapEditSelection: PropTypes.func,
+  tapId: PropTypes.string
 }
 
 export default KegsList;

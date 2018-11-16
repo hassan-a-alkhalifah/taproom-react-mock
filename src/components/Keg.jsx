@@ -39,7 +39,10 @@ function Keg(props) {
         <p><span className='beer-brand'>{props.beerBrand}</span> <span className='beer-abv'>{props.beerABV}</span></p>
         <p className='pint-level'>Pint Level: {props.pintLevel}</p>
       </div>
-      <KegEditButton/>
+      <KegEditButton
+        onTapEditSelection={props.onTapEditSelection}
+        tapId={props.tapId}
+      />
     </div>
   );
 }
@@ -50,7 +53,9 @@ Keg.propTypes = {
   beerPrice: PropTypes.string,
   beerABV: PropTypes.string,
   beerBrand: PropTypes.string,
-  pintLevel: PropTypes.number
+  pintLevel: PropTypes.string,
+  onTapEditSelection: PropTypes.func,
+  tapId: PropTypes.string
 };
 
 export default Keg;

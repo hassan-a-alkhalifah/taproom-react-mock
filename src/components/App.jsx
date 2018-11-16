@@ -31,7 +31,11 @@ class App extends React.Component {
         <Switch>
           <Route
             exact path='/'
-            component={KegsList}
+            render={ () =>
+              <KegsList
+                masterTapList={this.state.masterTapList}
+              />
+            }
           />
           <Route
             exact path='/admin'

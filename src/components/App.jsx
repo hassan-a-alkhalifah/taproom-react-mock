@@ -11,10 +11,18 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      masterTapList: {}
+      masterTapList: {},
+      selectedEditTap: null,
+      beerBrandImageInput: null,
+      beerNameInput: null,
+      beerPriceInput: null,
+      beerABVInput: null,
+      beerBrandInput: null,
+      pintLevelInput: null
     };
     this.handleAddingNewTapToList = this.handleAddingNewTapToList.bind(this);
     this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleAddingNewTapToList(newTap) {
@@ -26,7 +34,22 @@ class App extends React.Component {
   }
 
   handleChangingSelectedTicket(tapId) {
-    console.log(tapId);
+
+    this.setState({
+      selectedEditTap: tapId,
+      beerBrandImageInput: this.state.masterTapList[tapId].beerBrandImage,
+      beerNameInput: this.state.masterTapList[tapId].beerName,
+      beerPriceInput: this.state.masterTapList[tapId].beerPrice,
+      beerABVInput: this.state.masterTapList[tapId].beerABV,
+      beerBrandInput: this.state.masterTapList[tapId].beerBrand,
+      pintLevelInput: this.state.masterTapList[tapId].pintLevel
+    });
+  }
+
+  handleInputChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   }
 
   render() {
@@ -40,6 +63,14 @@ class App extends React.Component {
               <KegsList
                 masterTapList={this.state.masterTapList}
                 onTapEditSelection={this.handleChangingSelectedTicket}
+                selectedEditTap={this.state.selectedEditTap}
+                onInputChange={this.handleInputChange}
+                beerBrandImageInput={this.state.beerBrandImageInput}
+                beerNameInput={this.state.beerNameInput}
+                beerPriceInput={this.state.beerPriceInput}
+                beerABVInput={this.state.beerABVInput}
+                beerBrandInput={this.state.beerBrandInput}
+                pintLevelInput={this.state.pintLevelInput}
               />
             }
           />

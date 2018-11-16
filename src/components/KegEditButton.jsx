@@ -7,7 +7,7 @@ function KegEditButton() {
     borderRadius: '4px',
     border: 'none',
     cursor: 'pointer'
-  }
+  };
 
   return(
     <button style={kegEditButtonStyles}>Edit</button>

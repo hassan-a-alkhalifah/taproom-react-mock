@@ -9,16 +9,16 @@ function Keg(props) {
     display: 'flex',
     alignItems: 'center',
     marginBottom: '60px'
-  }
+  };
   const beerBrandImageStyles = {
     width: '100px',
     height: '100px',
     marginRight: '20px'
-  }
+  };
   const beerSpecsStyles = {
     height: '100px',
     marginRight: '20px'
-  }
+  };
 
   return(
     <div style={kegStyles}>

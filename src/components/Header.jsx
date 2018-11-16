@@ -28,7 +28,7 @@ function Header() {
   };
   const mainLogoStyle = {
     width: '130px'
-  }
+  };
 
   return(
     <div style={headerStyles}>

@@ -7,7 +7,7 @@ const footerStyles = {
   background: 'linear-gradient(to right, rgba(40,33,32,1) 0%, rgba(40,33,32,1) 27%, rgba(38,22,13,1) 55%, rgba(61,28,10,1) 82%, rgba(66,27,6,1) 100%)',
   padding: '30px 30px 20px 30px',
   boxShadow: '0px 0px 15px 5px rgba(0,0,0,0.75)'
-}
+};
 const footerTopStyles = {
   display: 'flex',
   justifyContent: 'space-between',
@@ -15,21 +15,21 @@ const footerTopStyles = {
   paddingBottom: '30px',
   fontSize: '20px',
   color: '#FFF8F6'
-}
+};
 const footerSocialIconsContainerStyles = {
   width: '260px',
   display: 'flex',
   justifyContent: 'space-between'
-}
+};
 const footerBottomStyles = {
   display: 'flex',
   justifyContent: 'center',
   paddingTop: '20px',
   color: '#FFF8F6'
-}
+};
 const developerAndDesignerLinkStyles = {
   color: '#FFF8F6'
-}
+};
 
 function Footer() {
   return(

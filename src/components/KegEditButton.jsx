@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function KegEditButton() {
+function KegEditButton(props) {
 
   const kegEditButtonStyles = {
     padding: '10px',
@@ -10,8 +11,18 @@ function KegEditButton() {
   };
 
   return(
-    <button style={kegEditButtonStyles}>Edit</button>
+    <button
+      onClick={() => {
+        props.onTapEditSelection(props.tapId);
+      }}
+      style={kegEditButtonStyles}>Edit
+    </button>
   );
+}
+
+KegEditButton.propTypes = {
+  onTapEditSelection: PropTypes.func,
+  tapId: PropTypes.string
 }
 
 export default KegEditButton;

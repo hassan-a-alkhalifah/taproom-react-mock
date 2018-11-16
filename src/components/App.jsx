@@ -4,14 +4,24 @@ import Header from './Header';
 import KegsList from './KegsList';
 import Admin from './Admin';
 import Footer from './Footer';
+import { v4 } from 'uuid';
 
 class App extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      
-    }
+      masterTapList: {}
+    };
+    this.handleAddingNewTapToList = this.handleAddingNewTapToList.bind(this);
+  }
+
+  handleAddingNewTapToList(newTap) {
+    let newTapId = v4();
+    let newMasterTapList = Object.assign({}, this.state.masterTapList, {
+      [newTapId]: newTap
+    });
+    this.setState({ masterTapList: newMasterTapList });
   }
 
   render() {
@@ -19,8 +29,18 @@ class App extends React.Component {
       <div>
         <Header/>
         <Switch>
-          <Route exact path='/' component={KegsList} />
-          <Route exact path='/admin' component={Admin} />
+          <Route
+            exact path='/'
+            component={KegsList}
+          />
+          <Route
+            exact path='/admin'
+            render={ () =>
+              <Admin
+                onNewTapCreation={this.handleAddingNewTapToList}
+              />
+            }
+          />
         </Switch>
         <Footer/>
       </div>

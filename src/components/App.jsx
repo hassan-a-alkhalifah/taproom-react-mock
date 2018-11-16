@@ -4,6 +4,7 @@ import Header from './Header';
 import KegsList from './KegsList';
 import Admin from './Admin';
 import Footer from './Footer';
+import TapEditPopUpModal from './TapEditPopUpModal';
 import { v4 } from 'uuid';
 
 class App extends React.Component {
@@ -46,6 +47,7 @@ class App extends React.Component {
             }
           />
         </Switch>
+        <TapEditPopUpModal/>
         <Footer/>
       </div>
     );

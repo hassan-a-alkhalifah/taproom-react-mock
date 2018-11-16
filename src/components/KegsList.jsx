@@ -1,12 +1,17 @@
 import React from 'react';
 import beerTaps from '../assets/images/beer-taps.jpg';
+import shinerBockLogo from '../assets/images/shiner-bock-logo.jpg';
+import guinnessDraughtLogo from '../assets/images/guinness-draught-logo.jpg';
+import blueMoonLogo from '../assets/images/blue-moon-logo.jpg';
+import budweiserLogo from '../assets/images/budweiser-logo.jpg';
+import heinekenLogo from '../assets/images/heineken-logo.jpg';
 import Keg from './Keg';
 
 function KegsList() {
 
   const masterKegsList = [
     {
-      beerBrandImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSOmjZOYytvTyrTzuc0f2QrGj-rixSqXarTlpZsRVPGaMu-aur',
+      beerBrandImage: `${shinerBockLogo}`,
       beerName: 'Bock',
       beerPrice: '$3.50',
       beerABV: '4.4%',
@@ -14,7 +19,7 @@ function KegsList() {
       pintLevel: 100
     },
     {
-      beerBrandImage: 'https://lh3.googleusercontent.com/LVVcmpcHEmolmm94L_kyJIyzviGD68WDWU0kdQqiGZkXA1GN8MSYJvojoTYIcVgCsbNqwTkqAYcqDXuqC8aAQuxx4SD0Ag=s750',
+      beerBrandImage: `${guinnessDraughtLogo}`,
       beerName: 'Draught',
       beerPrice: '$4.00',
       beerABV: '5.0%',
@@ -22,7 +27,7 @@ function KegsList() {
       pintLevel: 100
     },
     {
-      beerBrandImage: 'http://kegguys.com/wp-content/uploads/2017/05/blue_moon_logo.jpg',
+      beerBrandImage: `${blueMoonLogo}`,
       beerName: 'Belgian White',
       beerPrice: '$5.00',
       beerABV: '5.4%',
@@ -30,7 +35,7 @@ function KegsList() {
       pintLevel: 100
     },
     {
-      beerBrandImage: 'https://grillfestival.com/wp-content/uploads/2017/02/budweiser-logo-1.jpg',
+      beerBrandImage: `${budweiserLogo}`,
       beerName: 'Budweiser',
       beerPrice: '$3.25',
       beerABV: 'Budweiser',
@@ -38,7 +43,7 @@ function KegsList() {
       pintLevel: 100
     },
     {
-      beerBrandImage: 'https://i.pinimg.com/originals/9a/a4/81/9aa481a00d10248313da7d48388125f0.png',
+      beerBrandImage: `${heinekenLogo}`,
       beerName: 'Lager',
       beerPrice: '$3.25',
       beerABV: '5.0%',

@@ -8,9 +8,9 @@
 
 The website is a React redo mockup of an Angular tap room project worked on in my Angular course here at [Epicodus](https://www.epicodus.com/). The website essentially will show customers a list/menu of all available kegs for the fictional tap room bar. This will include the name, brand, price and how many pints are available for each offered keg. Beers will also be organized and color coded based on prices and strength.
 
-Listed kegs with 10 pints or less will be marked so the employee can be alerted with it needs to be changed. Each keg has a edit button to open up a pop-up modal. This pop-up modal will allow the employee to edit the keg. There is also a admin console to allow emploee to add a new keg.
+Listed kegs with 10 pints or less will be marked so the employee can be alerted with it needs to be changed. Each keg has a edit button to open up a pop-up modal. This pop-up modal will allow the employee to edit the keg. There is also a admin console to allow employees to add a new keg.
 
-The website is broken down into multiple components which have their data types and shapes defined by propTypes. Client-side routing will be used to create the appearance of multiple pages as the user navigated to a different "page". CSS object and JSX style tags are used to provide styles to individual components.
+The website is broken down into multiple components which have their data types and shapes defined by propTypes. Client-side routing will be used to create the appearance of multiple pages as the user navigated to a different "page". CSS object and JSX style tags are used to provide styles to individual components. App component will house state while the remaining components will remain stateless.
 
 My components structure can be viewed below:
 
@@ -27,14 +27,18 @@ ___
 ### Landing Page Bottom
 ![landing page bottom](./src/assets/images/landing-page-bottom.png)
 ___
+### Edit Tap Pop Up Modal
+![edit tap pop up modal](./src/assets/images/edit-tap-pop-up-modal.png)
+___
 ### Admin Page
 ![admin page](./src/assets/images/admin-page.png)
-
 
 ## My Notes
 
 * Had trouble setting up and working with style-jsx. Seems to have been a version error. Also, it seems you cannot target a tag provide by the Link tags. Using CSS incline styles seems to be the only get around.
 * Tried injecting base64 converted imaged into json, but won't work. For the time being, I used image url paths for the image src value. I kept the saved images, as we should be learning more about how to work with base64 converted images soon and using firebase as a way to store and retrieve them.
+* Took some time planning on how to integrated additional CRUD functionality, via updated and delete beer taps. I decided to use the App components as the foundation to house state. So I converted if from a static function into a class with various methods and constructor to pass stateful data back and forth from this location. I was able to accomplish updating taps, but didn't have time to code up the functionality to delete them yet. 
+* I did attempt to use a file input for images, but struggled on the concept, so I defaulted to users using a image url address for the time being
 
 ## User Stories
 

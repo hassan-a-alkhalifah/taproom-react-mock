@@ -43,6 +43,23 @@ function KegsList(props) {
     background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%)'
   };
 
+  let optionalselectedEditTapPopUpModelContent = null;
+  if(props.selectedEditTap != null) {
+    optionalselectedEditTapPopUpModelContent =
+    <TapEditPopUpModal
+      selectedEditTap={props.selectedEditTap}
+      masterTapList={props.masterTapList}
+      onInputChange={props.onInputChange}
+      beerBrandImageInput={props.beerBrandImageInput}
+      beerNameInput={props.beerNameInput}
+      beerPriceInput={props.beerPriceInput}
+      beerABVInput={props.beerABVInput}
+      beerBrandInput={props.beerBrandInput}
+      pintLevelInput={props.pintLevelInput}
+      onUpdatedTapCreation={props.onUpdatedTapCreation}
+    />
+  }
+
   return(
     <div>
       <style jsx>{`
@@ -111,17 +128,7 @@ function KegsList(props) {
         <img src={beerTaps} style={mainImageStyle}/>
       </div>
       <div style={masterKegListStyles}>
-        <TapEditPopUpModal
-          selectedEditTap={props.selectedEditTap}
-          masterTapList={props.masterTapList}
-          onInputChange={props.onInputChange}
-          beerBrandImageInput={props.beerBrandImageInput}
-          beerNameInput={props.beerNameInput}
-          beerPriceInput={props.beerPriceInput}
-          beerABVInput={props.beerABVInput}
-          beerBrandInput={props.beerBrandInput}
-          pintLevelInput={props.pintLevelInput}
-        />
+        {optionalselectedEditTapPopUpModelContent}
         {Object.keys(props.masterTapList).map((tapId) => {
           let tap = props.masterTapList[tapId];
           return(
@@ -154,7 +161,8 @@ KegsList.propTypes = {
   beerPriceInput: PropTypes.string,
   beerABVInput: PropTypes.string,
   beerBrandInput: PropTypes.string,
-  pintLevelInput: PropTypes.string
+  pintLevelInput: PropTypes.string,
+  onUpdatedTapCreation: PropTypes.func
 }
 
 export default KegsList;

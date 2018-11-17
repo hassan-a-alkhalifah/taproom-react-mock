@@ -19,6 +19,11 @@ function TapEditPopUpModal(props) {
     pintLevelInput = props.pintLevelInput;
   }
 
+  function handleUpdateTapFormSubmission(event) {
+    event.preventDefault();
+    props.onUpdatedTapCreation({beerBrandImage: beerBrandImageInput.value, beerName: beerNameInput.value, beerPrice: beerPriceInput.value, beerABV: beerABVInput.value, beerBrand: beerBrandInput.value, pintLevel: pintLevelInput.value}, props.selectedEditTap);
+  }
+
   const tapEditPopUpModalStyles = {
     width: '400px',
     height: '300px',
@@ -72,7 +77,7 @@ function TapEditPopUpModal(props) {
             margin-right: 68px;
           }
       `}</style>
-      <form style={formStyles}>
+    <form onSubmit={handleUpdateTapFormSubmission} style={formStyles}>
         <div>
           <label for='beer-brand-image'>Beer Brand Image</label>
           <input
@@ -156,7 +161,8 @@ TapEditPopUpModal.propType = {
   beerPriceInput: PropTypes.string,
   beerABVInput: PropTypes.string,
   beerBrandInput: PropTypes.string,
-  pintLevelInput: PropTypes.string
+  pintLevelInput: PropTypes.string,
+  onUpdatedTapCreation: PropTypes.func
 }
 
 export default TapEditPopUpModal;

@@ -30,6 +30,9 @@ ___
 ### Edit Tap Pop Up Modal
 ![edit tap pop up modal](./src/assets/images/edit-tap-pop-up-modal.png)
 ___
+### Delete Confirmation Pop Up Modal
+![delete confirmation pop up modal](./src/assets/images/delete-confirmation-pop-up-modal.png)
+___
 ### Admin Page
 ![admin page](./src/assets/images/admin-page.png)
 
@@ -37,7 +40,7 @@ ___
 
 * Had trouble setting up and working with style-jsx. Seems to have been a version error. Also, it seems you cannot target a tag provide by the Link tags. Using CSS incline styles seems to be the only get around.
 * Tried injecting base64 converted imaged into json, but won't work. For the time being, I used image url paths for the image src value. I kept the saved images, as we should be learning more about how to work with base64 converted images soon and using firebase as a way to store and retrieve them.
-* Took some time planning on how to integrated additional CRUD functionality, via updated and delete beer taps. I decided to use the App components as the foundation to house state. So I converted if from a static function into a class with various methods and constructor to pass stateful data back and forth from this location. I was able to accomplish updating taps, but didn't have time to code up the functionality to delete them yet. 
+* Took some time planning on how to integrated additional CRUD functionality, via updated and delete beer taps. I decided to use the App components as the foundation to house state. So I converted if from a static function into a class with various methods and constructor to pass stateful data back and forth from this location. I was able to accomplish updating deleting taps.
 * I did attempt to use a file input for images, but struggled on the concept, so I defaulted to users using a image url address for the time being
 
 ## User Stories

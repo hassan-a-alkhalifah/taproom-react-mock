@@ -46,7 +46,7 @@ function Keg(props) {
           tapId={props.tapId}
         />
         <KegDeleteButton
-          onTapDeleteSelection={props.onTapDeleteSelection}
+          onCheckingToDeleteSelection={props.onCheckingToDeleteSelection}
           tapId={props.tapId}
         />
       </div>
@@ -62,7 +62,7 @@ Keg.propTypes = {
   beerBrand: PropTypes.string,
   pintLevel: PropTypes.string,
   onTapEditSelection: PropTypes.func,
-  onTapDeleteSelection: PropTypes.func,
+  onCheckingToDeleteSelection: PropTypes.func,
   tapId: PropTypes.string
 };
 

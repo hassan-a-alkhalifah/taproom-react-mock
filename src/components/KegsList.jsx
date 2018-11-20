@@ -2,6 +2,7 @@ import React from 'react';
 import beerTaps from '../assets/images/beer-taps.jpg';
 import Keg from './Keg';
 import TapEditPopUpModal from './TapEditPopUpModal';
+import TapCheckingDeleteMessagePopUpModal from './TapCheckingDeleteMessagePopUpModal';
 import PropTypes from 'prop-types';
 
 function KegsList(props) {
@@ -57,6 +58,13 @@ function KegsList(props) {
       beerBrandInput={props.beerBrandInput}
       pintLevelInput={props.pintLevelInput}
       onUpdatedTapCreation={props.onUpdatedTapCreation}
+    />
+  }
+  let optionalselectedDeleteTapPopUpModelContent = null;
+  if(props.selectedDeleteTap != null) {
+    optionalselectedDeleteTapPopUpModelContent =
+    <TapCheckingDeleteMessagePopUpModal
+      onDeletingSelectedTap={props.onDeletingSelectedTap}
     />
   }
 
@@ -129,6 +137,7 @@ function KegsList(props) {
       </div>
       <div style={masterKegListStyles}>
         {optionalselectedEditTapPopUpModelContent}
+        {optionalselectedDeleteTapPopUpModelContent}
         {Object.keys(props.masterTapList).map((tapId) => {
           let tap = props.masterTapList[tapId];
           return(
@@ -141,7 +150,7 @@ function KegsList(props) {
               beerBrand={tap.beerBrand}
               pintLevel={tap.pintLevel}
               onTapEditSelection={props.onTapEditSelection}
-              onTapDeleteSelection={props.onTapDeleteSelection}
+              onCheckingToDeleteSelection={props.onCheckingToDeleteSelection}
               tapId={tapId}
             />
           );
@@ -154,7 +163,7 @@ function KegsList(props) {
 KegsList.propTypes = {
   masterTapList: PropTypes.object,
   onTapEditSelection: PropTypes.func,
-  onTapDeleteSelection: PropTypes.func,
+  onCheckingToDeleteSelection: PropTypes.func,
   tapId: PropTypes.string,
   selectedEditTap: PropTypes.string,
   onInputChange: PropTypes.func,
@@ -164,7 +173,9 @@ KegsList.propTypes = {
   beerABVInput: PropTypes.string,
   beerBrandInput: PropTypes.string,
   pintLevelInput: PropTypes.string,
-  onUpdatedTapCreation: PropTypes.func
+  onUpdatedTapCreation: PropTypes.func,
+  selectedDeleteTap: PropTypes.string,
+  onDeletingSelectedTap: PropTypes.func
 }
 
 export default KegsList;

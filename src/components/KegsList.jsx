@@ -141,6 +141,7 @@ function KegsList(props) {
               beerBrand={tap.beerBrand}
               pintLevel={tap.pintLevel}
               onTapEditSelection={props.onTapEditSelection}
+              onTapDeleteSelection={props.onTapDeleteSelection}
               tapId={tapId}
             />
           );
@@ -153,6 +154,7 @@ function KegsList(props) {
 KegsList.propTypes = {
   masterTapList: PropTypes.object,
   onTapEditSelection: PropTypes.func,
+  onTapDeleteSelection: PropTypes.func,
   tapId: PropTypes.string,
   selectedEditTap: PropTypes.string,
   onInputChange: PropTypes.func,

@@ -24,6 +24,7 @@ class App extends React.Component {
     this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleUpdatingTapToList = this.handleUpdatingTapToList.bind(this);
+    this.handleDeletingSelectedTap = this.handleDeletingSelectedTap.bind(this);
   }
 
   handleAddingNewTapToList(newTap) {
@@ -62,6 +63,14 @@ class App extends React.Component {
     });
   }
 
+  handleDeletingSelectedTap(tapId) {
+    let newMasterTapList = Object.assign({}, this.state.masterTapList);
+    delete newMasterTapList[tapId];
+    this.setState({
+      masterTapList: newMasterTapList
+    })
+  }
+
   render() {
     return (
       <div>
@@ -82,6 +91,7 @@ class App extends React.Component {
                 beerBrandInput={this.state.beerBrandInput}
                 pintLevelInput={this.state.pintLevelInput}
                 onUpdatedTapCreation={this.handleUpdatingTapToList}
+                onTapDeleteSelection={this.handleDeletingSelectedTap}
               />
             }
           />

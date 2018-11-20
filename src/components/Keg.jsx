@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import KegEditButton from './KegEditButton';
+import KegDeleteButton from './KegDeleteButton';
 
 function Keg(props) {
 
@@ -39,10 +40,16 @@ function Keg(props) {
         <p><span className='beer-brand'>{props.beerBrand}</span> <span className='beer-abv'>{props.beerABV}</span></p>
         <p className='pint-level'>Pint Level: {props.pintLevel}</p>
       </div>
-      <KegEditButton
-        onTapEditSelection={props.onTapEditSelection}
-        tapId={props.tapId}
-      />
+      <div>
+        <KegEditButton
+          onTapEditSelection={props.onTapEditSelection}
+          tapId={props.tapId}
+        />
+        <KegDeleteButton
+          onTapDeleteSelection={props.onTapDeleteSelection}
+          tapId={props.tapId}
+        />
+      </div>
     </div>
   );
 }
@@ -55,6 +62,7 @@ Keg.propTypes = {
   beerBrand: PropTypes.string,
   pintLevel: PropTypes.string,
   onTapEditSelection: PropTypes.func,
+  onTapDeleteSelection: PropTypes.func,
   tapId: PropTypes.string
 };
 

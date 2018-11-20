@@ -13,7 +13,7 @@ function KegDeleteButton(props) {
   return(
     <button
       onClick={() => {
-        props.onTapDeleteSelection(props.tapId);
+        props.onCheckingToDeleteSelection(props.tapId);
       }}
       style={kegDeleteButtonStyles}>Delete
     </button>
@@ -21,7 +21,7 @@ function KegDeleteButton(props) {
 }
 
 KegDeleteButton.propTypes = {
-  onTapDeleteSelection: PropTypes.func,
+  onCheckingToDeleteSelection: PropTypes.func,
   tapId: PropTypes.string
 }
 

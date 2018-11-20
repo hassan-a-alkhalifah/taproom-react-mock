@@ -18,13 +18,15 @@ class App extends React.Component {
       beerPriceInput: null,
       beerABVInput: null,
       beerBrandInput: null,
-      pintLevelInput: null
+      pintLevelInput: null,
+      selectedDeleteTap: null
     };
     this.handleAddingNewTapToList = this.handleAddingNewTapToList.bind(this);
     this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleUpdatingTapToList = this.handleUpdatingTapToList.bind(this);
     this.handleDeletingSelectedTap = this.handleDeletingSelectedTap.bind(this);
+    this.handleCheckingToDeleteSelectedTap = this.handleCheckingToDeleteSelectedTap.bind(this);
   }
 
   handleAddingNewTapToList(newTap) {
@@ -63,12 +65,25 @@ class App extends React.Component {
     });
   }
 
-  handleDeletingSelectedTap(tapId) {
-    let newMasterTapList = Object.assign({}, this.state.masterTapList);
-    delete newMasterTapList[tapId];
+  handleCheckingToDeleteSelectedTap(selectedTapId) {
     this.setState({
-      masterTapList: newMasterTapList
-    })
+      selectedDeleteTap: selectedTapId
+    });
+  }
+
+  handleDeletingSelectedTap(choice) {
+    if(choice) {
+      let newMasterTapList = Object.assign({}, this.state.masterTapList);
+      delete newMasterTapList[this.state.selectedDeleteTap];
+      this.setState({
+        masterTapList: newMasterTapList,
+        selectedDeleteTap: null
+      })
+    } else {
+      this.setState({
+        selectedDeleteTap: null
+      })
+    }
   }
 
   render() {
@@ -91,7 +106,9 @@ class App extends React.Component {
                 beerBrandInput={this.state.beerBrandInput}
                 pintLevelInput={this.state.pintLevelInput}
                 onUpdatedTapCreation={this.handleUpdatingTapToList}
-                onTapDeleteSelection={this.handleDeletingSelectedTap}
+                onCheckingToDeleteSelection={this.handleCheckingToDeleteSelectedTap}
+                selectedDeleteTap={this.state.selectedDeleteTap}
+                onDeletingSelectedTap={this.handleDeletingSelectedTap}
               />
             }
           />

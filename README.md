@@ -95,6 +95,7 @@ ___
 
 ## Technologies Used
 
+* React
 * HTML
 * JavaScript
 * Node.js
